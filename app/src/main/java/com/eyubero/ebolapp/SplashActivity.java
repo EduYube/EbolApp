@@ -16,15 +16,24 @@ public class SplashActivity extends AppCompatActivity {
 
 //        Launch main activity by thread
 //        We need to launch a thread runneable and catch it with a handler, because why want to launch after 3 sec
-        Runnable launch = new Runnable() {
+//        Runnable launch = new Runnable() {
+//            @Override
+//            public void run() {
+//                nextActivity();
+//                finish();
+//            }
+//        };
+//        Handler mHandler = new Handler();
+//        mHandler.postDelayed(launch,3000);
+
+//        More elegant code for launch with handler
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 nextActivity();
                 finish();
             }
-        };
-        Handler mHandler = new Handler();
-        mHandler.postDelayed(launch,3000);
+        },3000);
     }
 
     public void nextActivity(){
