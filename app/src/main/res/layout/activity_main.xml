@@ -9,6 +9,8 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/fragment"
+        android:tag="Fragment"
         android:name="com.eyubero.ebolapp.NewsFragment" />
 
 </android.support.constraint.ConstraintLayout>
