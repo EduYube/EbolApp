@@ -8,7 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +89,12 @@ public class NewsFragment extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View rowView = getActivity().getLayoutInflater().inflate(R.layout.row,null);
+
+            TextView textView = rowView.findViewById(R.id.tv_row);
+            textView.setText(mNewsList.get(position));
+
+            ImageView imageView = rowView.findViewById(R.id.im_picasso);
+            Picasso.with(getActivity()).load("https://res.cloudinary.com/teepublic/image/private/s--9WFhgDqI--/t_Preview/b_rgb:191919,c_lpad,f_jpg,h_630,q_90,w_1200/v1493034870/production/designs/1513847_1.jpg").into(imageView);
 
             return rowView;
         }
